@@ -1,0 +1,116 @@
+body {
+  background-color: #0f0f0f;
+}
+
+.main_window {
+  background-color: #262626;
+  width: 870px;
+  height: 340px;
+  margin: 50px;
+  .title {
+    font-family: 'Press Start 2P';
+    font-size: 50px;
+    color: #4d4d4d;
+    position: absolute;
+    top: 70px;
+    left: 187px;
+  }
+  .left_sword_shield {
+    background-image: image-url('sword_and_shield.png');
+    background-repeat: none;
+    height: 120px;
+    width: 64px;
+    position: absolute;
+    left: 92px;
+    top: 51px;
+  }
+  .right_sword_shield {
+    background-image: image-url('sword_and_shield.png');
+    background-repeat: none;
+    height: 120px;
+    width: 64px;
+    position: absolute;
+    left: 830px;
+    top: 51px;
+  }
+  .spartacus {
+    background-image: image-url('spartacus.png');
+    background-repeat: none;
+    height: 200px;
+    width: 184px;
+    position: absolute;
+    left: 392px;
+    top: 127px;
+  }
+  .banner {
+    background-image: image-url('banner.png');
+    background-repeat: none;
+    width: 850px;
+    height: 79px;
+    position: absolute;
+    top: 326px;
+    left: 68px;
+    .text {
+      font-family: 'Press Start 2P';
+      color: black;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+  .button {
+    background-image: image-url('button.png');
+    background-repeat: none;
+    width: 250px;
+    height: 81px;
+    position: absolute;
+    top: 170px;
+    left: 600px;
+    font-family: 'Press Start 2P';
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 81px;
+  }
+}
+.board_7_tiles {
+  background-image: image-url('board.png');
+  background-repeat: none;
+  width: 870px;
+  height: 212px;
+  margin: 50px;
+  #spartacus {
+    background-image: image-url('board_spartacus.png');
+    background-repeat: none;
+    width: 65px;
+    height: 90px;
+    position: absolute;
+    top: 115px;
+    left: 115px;
+  }
+}
+.ability_button {
+  background-image: image-url('button-green.png');
+  background-repeat: none;
+  width: 250px;
+  height: 81px;
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  font-family: 'Press Start 2P';
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 81px;
+}
+#abilities_frame {
+  background-color: #404040;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  display: none;
+}
