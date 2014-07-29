@@ -1,21 +1,26 @@
-.board_7_tiles
+.board_8_tiles
   #spartacus
     #heal +2 HEALTH
     #damage_to_spartacus -3
     #damage_to_monster -5
   #heart
   #health 20
+  .melee_monster.tile_3
+  .melee_monster.tile_5
+  .melee_monster.tile_6
+  .melee_monster.tile_8
 .ability_button ABILITIES
 =link_to "ABILITIES", '#', class: "ability_button", :onclick => "$('#abilities_frame').toggle();"
 =link_to "ENTER CODE", '#', class: "code_button", :onclick => "$('#code_frame').toggle(); $('.run_button').toggle();"
 #abilities_frame
   .text <em>></em> warrior.walk!
+  .text <em>></em> warrior.feel.empty?
+  .text <em>></em> warrior.attack!
+  .text <em>></em> warrior.health
+  .text <em>></em> warrior.rest!
 %textarea#code_frame
-%input{:type=>"button", :onclick=>"check_code_level_1()", class: "run_button", :value=> "RUN"}
+%input{:type=>"button", :onclick=>"check_code_level_3()", class: "run_button", :value=> "RUN"}
 #overlay
 #success_window
   .text SUCCESS! <br> ONTO THE NEXT JOURNEY, RUBY WARRIOR
-  =link_to "NEXT LEVEL", level_2_path, class: "next_level_button"
-#error_window
-  .text YOU FAILED! <br> NO REALLY, CHECK YOUR CODE
-  %input{:type=>"button", :onclick=>"toggle_error_window()", class: "error_button", :value=> "OK"}
+  =link_to "NEXT LEVEL", level_4_path, class: "next_level_button"

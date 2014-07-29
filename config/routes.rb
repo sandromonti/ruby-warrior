@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'ruby_warrior/index'
   get 'board' => 'ruby_warrior#board'
 
-  get 'verify_move' => 'ruby_warrior#verify_move'
+  get 'level_2' => 'ruby_warrior#level_2'
+  get 'level_3' => 'ruby_warrior#level_3'
+  get 'level_4' => 'ruby_warrior#level_4'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

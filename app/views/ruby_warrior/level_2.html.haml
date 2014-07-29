@@ -5,17 +5,17 @@
     #damage_to_monster -5
   #heart
   #health 20
+  .melee_monster.tile_5
 .ability_button ABILITIES
 =link_to "ABILITIES", '#', class: "ability_button", :onclick => "$('#abilities_frame').toggle();"
 =link_to "ENTER CODE", '#', class: "code_button", :onclick => "$('#code_frame').toggle(); $('.run_button').toggle();"
 #abilities_frame
   .text <em>></em> warrior.walk!
+  .text <em>></em> warrior.feel.empty?
+  .text <em>></em> warrior.attack!
 %textarea#code_frame
-%input{:type=>"button", :onclick=>"check_code_level_1()", class: "run_button", :value=> "RUN"}
+%input{:type=>"button", :onclick=>"check_code_level_2()", class: "run_button", :value=> "RUN"}
 #overlay
 #success_window
   .text SUCCESS! <br> ONTO THE NEXT JOURNEY, RUBY WARRIOR
-  =link_to "NEXT LEVEL", level_2_path, class: "next_level_button"
-#error_window
-  .text YOU FAILED! <br> NO REALLY, CHECK YOUR CODE
-  %input{:type=>"button", :onclick=>"toggle_error_window()", class: "error_button", :value=> "OK"}
+  =link_to "NEXT LEVEL", level_3_path, class: "next_level_button"

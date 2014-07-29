@@ -3,10 +3,19 @@ class RubyWarriorController < ApplicationController
   end
 
   def board
-    RubyWarrior::Config.path_prefix = 'C:/Users/Sandro/Documents/ruby-warrior/rubywarrior/sandro-beginner'
-    @@game = RubyWarrior::Game.new
-    @@game.start
-    @@warrior_position = 0
+    #RubyWarrior::Config.path_prefix = 'C:/Users/Sandro/Documents/ruby-warrior/rubywarrior/sandro-beginner'
+    #@game = RubyWarrior::Game.new
+    #@game.start
+    #@warrior_position = 0
+  end
+
+  def level_2
+  end
+
+  def level_3
+  end
+
+  def level_4
   end
 
   def get_available_abilities
@@ -14,8 +23,8 @@ class RubyWarriorController < ApplicationController
   end
 
   def move_spartacus
-    false unless @@warrior_position < @@game.current_level.warrior_position
-    @@warrior_position = @@game.current_level.warrior_position
+    false unless @warrior_position < @game.current_level.warrior_position
+    @warrior_position = @game.current_level.warrior_position
   end
 
   def verify_move

@@ -88,6 +88,63 @@ body {
     position: absolute;
     top: 115px;
     left: 115px;
+    #heal {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: #7FFA32;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      display: none;
+    }
+    #damage_to_spartacus {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: red;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      left: 20px;
+      display: none;
+    }
+    #damage_to_monster {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: red;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      left: 120px;
+      display: none;
+    }
+  }
+  #heart {
+    background-image: image-url('heart.png');
+    background-repeat: none;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 57px;
+    left: 105px;
+  }
+  #health {
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 61px;
+    left: 133px;
+  }
+  .melee_monster {
+    background-image: image-url('melee_monster.png');
+    background-repeat: none;
+    height: 70px;
+    width: 48px;
+    position: absolute;
+  }
+  .tile_5 {
+    top: 132px;
+    left: 522px;
   }
 }
 .ability_button {
@@ -105,12 +162,337 @@ body {
   text-decoration: none;
   line-height: 81px;
 }
+.code_button {
+  background-image: image-url('button.png');
+  background-repeat: none;
+  width: 250px;
+  height: 81px;
+  position: absolute;
+  top: 300px;
+  left: 640px;
+  font-family: 'Press Start 2P';
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 81px;
+}
+.run_button {
+  background-image: image-url('button.png');
+  background-repeat: none;
+  width: 250px;
+  height: 81px;
+  position: absolute;
+  top: 47px;
+  left: 609px;
+  font-family: 'Press Start 2P';
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 81px;
+  z-index: 2;
+  display: none;
+  background-color: transparent;
+  border: none;
+}
 #abilities_frame {
-  background-color: #404040;
+  background-color: #222222;
   width: 400px;
   height: 300px;
   position: absolute;
   top: 20px;
   left: 500px;
   display: none;
+  border: 3px solid #0d8c5a;
+  em {
+    font-style: normal;
+    color: #0d8c5a;
+  }
+  .text {
+    padding: 10px;
+    font-family: 'Press Start 2P';
+    color: white;
+    font-size: 12px;
+  }
+}
+#code_frame {
+  width: 700px;
+  height: 300px;
+  position: absolute;
+  top: 50px;
+  left: 145px;
+  display: none;
+  background-color: #444;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  color: #cccccc;
+}
+.hidden_linked {
+  position: absolute;
+  left: -1000;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  z-index: 10;
+  display: none;
+}
+#success_window {
+  width: 650px;
+  height: 130px;
+  background-color: #191919;
+  position: absolute;
+  top: 100px;
+  left: 168px;
+  z-index: 20;
+  display: none;
+  .text {
+    font-family: 'Press Start 2P';
+    color: #0d8c5a;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 150%;
+  }
+  .next_level_button {
+    background-image: image-url('button.png');
+    background-repeat: none;
+    width: 250px;
+    height: 81px;
+    position: absolute;
+    top: 51px;
+    left: 190px;
+    font-family: 'Press Start 2P';
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 81px;
+  }
+}
+#error_window {
+  width: 650px;
+  height: 130px;
+  background-color: #191919;
+  position: absolute;
+  top: 100px;
+  left: 168px;
+  z-index: 20;
+  display: none;
+  .text {
+    font-family: 'Press Start 2P';
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 150%;
+  }
+  .error_button {
+    background-image: image-url('button.png');
+    background-repeat: none;
+    width: 250px;
+    height: 81px;
+    position: absolute;
+    top: 51px;
+    left: 190px;
+    font-family: 'Press Start 2P';
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 81px;
+    background-color: transparent;
+    border: none;
+  }
+}
+.board_8_tiles {
+  background-image: image-url('board_8_tiles.png');
+  background-repeat: none;
+  width: 870px;
+  height: 190px;
+  margin: 50px;
+  #spartacus {
+    background-image: image-url('8_tiles_board_spartacus.png');
+    background-repeat: none;
+    width: 54px;
+    height: 75px;
+    position: absolute;
+    top: 115px;
+    left: 111px;
+    #heal {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: #7FFA32;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      display: none;
+    }
+    #damage_to_spartacus {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: red;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      left: 20px;
+      display: none;
+    }
+    #damage_to_monster {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: red;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      left: 120px;
+      display: none;
+    }
+  }
+  #heart {
+    background-image: image-url('heart.png');
+    background-repeat: none;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 57px;
+    left: 105px;
+  }
+  #health {
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 61px;
+    left: 133px;
+  }
+  .melee_monster {
+    background-image: image-url('8_tiles_melee_monster.png');
+    background-repeat: none;
+    height: 60px;
+    width: 41px;
+    position: absolute;
+    top: 132px;
+  }
+  .tile_3 {
+    left: 295px;
+  }
+  .tile_5 {
+    left: 473px;
+  }
+  .tile_6 {
+    left: 562px;
+  }
+  .tile_8 {
+    left: 740px;
+  }
+}
+.board_6_tiles {
+  background-image: image-url('board_6_tiles.png');
+  background-repeat: none;
+  width: 870px;
+  height: 239px;
+  margin: 50px;
+  #spartacus {
+    background-image: image-url('board_spartacus.png');
+    background-repeat: none;
+    width: 65px;
+    height: 90px;
+    position: absolute;
+    top: 132px;
+    left: 127px;
+    #heal {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: #7FFA32;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      display: none;
+    }
+    #damage_to_spartacus {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: red;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      left: 20px;
+      display: none;
+    }
+    #damage_to_monster {
+      font-family: 'Press Start 2P';
+      font-size: 12px;
+      color: red;
+      position: relative;
+      width: 115px;
+      top: -23px;
+      left: 120px;
+      display: none;
+    }
+  }
+  #heart {
+    background-image: image-url('heart.png');
+    background-repeat: none;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 57px;
+    left: 105px;
+  }
+  #health {
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 61px;
+    left: 133px;
+  }
+  .melee_monster {
+    background-image: image-url('8_tiles_melee_monster.png');
+    background-repeat: none;
+    height: 60px;
+    width: 41px;
+    position: absolute;
+    top: 132px;
+  }
+  .big_melee_monster {
+    background-image: image-url('big_melee_monster.png');
+    background-repeat: none;
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    top: 119px;
+  }
+  .archer {
+    background-image: image-url('archer.png');
+    background-repeat: none;
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    top: 94px;
+  }
+  .tile_3 {
+    left: 324px;
+  }
+  .tile_4 {
+    left: 437px;
+  }
+  .tile_5 {
+    left: 550px;
+  }
+  .tile_6 {
+    left: 663px;
+  }
 }
